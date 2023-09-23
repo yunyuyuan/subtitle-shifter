@@ -2,7 +2,7 @@ import argparse
 from re import match
 import fnmatch
 import pysubs2
-import cchardet as chardet
+# import cchardet as chardet
 import os
 from pathlib import Path
 from os import path
@@ -22,7 +22,7 @@ def parse_arg_f(arg_f: str) -> list[str]:
 
 def shift_file(filename: str, shift_time: float):
     with Path(filename) as fp:
-        encoding = chardet.detect(fp.read_bytes())['encoding']
+        encoding = "utf-8"
     subs = pysubs2.load(filename, encoding=encoding)
     if shift_time != 0:
         subs.shift(ms=shift_time)
