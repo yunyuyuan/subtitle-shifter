@@ -1,0 +1,2 @@
+faust-cchardet==2.1.19
+pysubs2==1.6.1
